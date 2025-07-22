@@ -15,7 +15,8 @@ const units = {
     "linearEquations": { type: "algebra", problemGenerator: problems.generateLinearEquationsProblem, langKey: "unitLinearEquations", descLangKey: "descriptionLinearEquations" },
     "inequalities": { type: "algebra", problemGenerator: problems.generateInequalitiesProblem, langKey: "unitInequalities", descLangKey: "descriptionInequalities" },
     "powers": { type: "algebra", problemGenerator: problems.generatePowersProblem, langKey: "unitPowers", descLangKey: "descriptionPowers" },
-    "algebraicOperations": { type: "algebra", problemGenerator: problems.generateAlgebraicOperationsProblem, langKey: "unitAlgebraicOperations", descLangKey: "descriptionAlgebraicOperations" }
+    "algebraicOperations": { type: "algebra", problemGenerator: problems.generateAlgebraicOperationsProblem, langKey: "unitAlgebraicOperations", descLangKey: "descriptionAlgebraicOperations" },
+    "mixedOperations": { type: "arithmetic", problemGenerator: problems.generateMixedOperationsProblem, langKey: "unitMixedOperations", descLangKey: "descriptionMixedOperations" }
 };
 
 export function updateContent() {
@@ -88,8 +89,8 @@ export function renderUnitSelectionPage() {
             if (units[unitId].type === type) {
                 groupHtml += `
                     <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                        <h4 class="text-lg font-semibold text-indigo-700 mb-2" data-lang-key="${units[unitId].langKey}"></h4>
-                        <p class="text-sm text-gray-600 mb-3" data-lang-key="${units[unitId].descLangKey}"></p>
+                        <h4 class="text-lg font-semibold text-indigo-700 mb-2">${state.translations[state.currentLanguage][units[unitId].langKey]}</h4>
+                        <p class="text-sm text-gray-600 mb-3">${state.translations[state.currentLanguage][units[unitId].descLangKey]}</p>
                         <button class="btn btn-secondary w-full select-unit-btn" data-unit-id="${unitId}">
                             <span data-lang-key="${units[unitId].langKey}"></span>
                         </button>

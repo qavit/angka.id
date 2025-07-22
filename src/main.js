@@ -22,17 +22,35 @@ async function initialize() {
     await state.loadTranslations();
 
     // 2. Set up language selection listeners
-    document.getElementById('settings-btn').addEventListener('click', renderSettingsPage);
+    const langDropdownBtn = document.getElementById('lang-dropdown-btn');
+    const langDropdownMenu = document.getElementById('lang-dropdown-menu');
 
-    document.querySelectorAll('.btn-lang').forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedLang = button.dataset.lang;
-            if (state.currentLanguage !== selectedLang) {
-                state.setLanguage(selectedLang);
-                handlePageUpdate(); // Re-render the current page with the new language
+    if (langDropdownBtn && langDropdownMenu) {
+        langDropdownBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent document click from closing immediately
+            langDropdownMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!langDropdownMenu.contains(event.target) && !langDropdownBtn.contains(event.target)) {
+                langDropdownMenu.classList.add('hidden');
             }
         });
-    });
+
+        langDropdownMenu.querySelectorAll('a[data-lang]').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedLang = link.dataset.lang;
+                if (state.currentLanguage !== selectedLang) {
+                    state.setLanguage(selectedLang);
+                    handlePageUpdate();
+                }
+                langDropdownMenu.classList.add('hidden'); // Close dropdown after selection
+            });
+        });
+    }
+
+    document.getElementById('settings-btn').addEventListener('click', renderSettingsPage);
 
     // 3. Render the initial page (Home Page)
     renderHomePage();
