@@ -1,0 +1,91 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-primary {
+    background-color: #4f46e5;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3), 0 2px 4px -1px rgba(79, 70, 229, 0.15);
+}
+.btn-primary:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+.btn-lang, .btn-toggle-math {
+    background-color: #64748b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+.btn-lang.active, .btn-toggle-math.active {
+    background-color: #334155;
+}
+input[type="number"], input[type="text"] {
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.feedback {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+.feedback.correct {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+.feedback.incorrect {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+.feedback.info {
+    background-color: #e0f2fe;
+    color: #0c4a6e;
+}
+/* KaTeX specific styles */
+.katex-display {
+    font-size: 2.5rem; /* Larger font size for display math */
+    padding: 0.5em 0;
+}
+#problem-display {
+    min-height: 2.5rem; /* Ensure consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

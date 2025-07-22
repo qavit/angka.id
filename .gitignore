@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Node - in case we use it later
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.idea/
+.vscode/

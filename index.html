@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="appTitle">Ulasan Matematika Esensial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxJntw6O/X1VfR9QvF5z4R+hC8G1a/VlX/dG5qM82pWw+l/S8x+k/U/tZ+Iq+" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-Z6O2zLd2i7i8Y7Z2G4t/T5hD6uB4eT+i6q8t/C5Vf4R+l/S8x+k/U/tZ+Iq+" crossorigin="anonymous"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="src/styles.css">
+
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-indigo-600 text-white p-4 shadow-md">
+        <div class="container flex justify-between items-center">
+            <h1 class="text-2xl font-bold" data-lang-key="appTitle">Ulasan Matematika Esensial</h1>
+            <div class="flex items-center space-x-2">
+                <span class="text-sm" data-lang-key="languageSelector">Pilih Bahasa:</span>
+                <button class="btn btn-lang active" data-lang="id">ID</button>
+                <button class="btn btn-lang" data-lang="zh-tw">繁中</button>
+                <button class="btn btn-lang" data-lang="en">EN</button>
+                <button id="settings-btn" class="ml-4 text-white hover:text-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="app-content" class="flex-grow container py-8"></main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center text-sm">
+        <div class="container">
+            &copy; 2024 Ulasan Matematika Esensial. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+    <!-- Main Application Script -->
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
