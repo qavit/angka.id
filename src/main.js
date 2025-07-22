@@ -1,5 +1,5 @@
 import * as state from './modules/state.js';
-import { renderHomePage, renderUnitSelectionPage, renderExercisePage, updateContent } from './modules/ui.js';
+import { renderHomePage, renderUnitSelectionPage, renderExercisePage, renderSettingsPage, updateContent } from './modules/ui.js';
 
 // Function to handle dynamic page updates after language change
 function handlePageUpdate() {

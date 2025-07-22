@@ -1,4 +1,3 @@
-
 {
     "id": {
         "appTitle": "Ulasan Matematika Esensial",
@@ -49,7 +48,9 @@
         "largestInteger": "bilangan bulat terbesar",
         "satisfies": "yang memenuhi.",
         "decimal": "desimal",
-        "fraction": "pecahan"
+        "fraction": "pecahan",
+        "settingsTitle": "Pengaturan",
+        "backButton": "Kembali"
     },
     "zh-tw": {
         "appTitle": "基礎數學複習",
@@ -100,7 +101,9 @@
         "largestInteger": "最大的整數",
         "satisfies": "滿足。",
         "decimal": "小數",
-        "fraction": "分數"
+        "fraction": "分數",
+        "settingsTitle": "設定",
+        "backButton": "返回"
     },
     "en": {
         "appTitle": "Essential Math Review",
