@@ -39,6 +39,12 @@ async function initialize() {
 
     // 4. Initial content update to set the default language text
     updateContent();
+
+    // Set active class for the current language in the dropdown
+    const currentLangLink = document.querySelector(`#lang-dropdown-menu a[data-lang="${state.currentLanguage}"]`);
+    if (currentLangLink) {
+        currentLangLink.classList.add('active');
+    }
 }
 
 // Start the application once the DOM is fully loaded

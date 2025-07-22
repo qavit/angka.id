@@ -89,3 +89,10 @@ input[type="number"], input[type="text"] {
     align-items: center;
     justify-content: center;
 }
+
+/* Dropdown specific styles */
+#lang-dropdown-menu a.active {
+    background-color: #e0e7ff; /* Light indigo for active item */
+    color: #4f46e5; /* Darker text for active item */
+    font-weight: 600;
+}

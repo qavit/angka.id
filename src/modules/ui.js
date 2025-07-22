@@ -34,8 +34,9 @@ export function updateContent() {
         answerInput.placeholder = lang.placeholderAnswer;
     }
 
-    document.querySelectorAll('.btn-lang').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === state.currentLanguage);
+    // Update active language link in dropdown
+    document.querySelectorAll('#lang-dropdown-menu a').forEach(link => {
+        link.classList.toggle('active', link.dataset.lang === state.currentLanguage);
     });
 
     const katexBtn = document.getElementById('btn-toggle-katex');
