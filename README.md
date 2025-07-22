@@ -1,126 +1,58 @@
+# Angka.id - Essential Math Review
 
-# 對話紀錄摘要
+An interactive, multi-language web application designed for adults to refresh their essential arithmetic and algebra skills. The interface is clean, simple, and allows for a focused learning experience.
 
-這份文件匯總了我們關於「成人基礎數學複習互動式網頁」的對話內容，包括功能需求、實作與問題修正。
+## ✨ Key Features
 
-## 初始需求 (2025年7月22日)
+*   **📚 Multiple Units:** Covers a wide range of topics from basic arithmetic (addition, fractions, order of operations) to fundamental algebra (linear equations, powers, inequalities).
+*   **🌐 Multi-Language Support:** Seamlessly switch the entire interface and problem text between English, Indonesian (ID), and Traditional Chinese (繁中).
+*   **➗ Dual Math Display Modes:** Choose between beautifully rendered mathematical notation with **KaTeX** or accessible **Plain Text**. This can be configured on the settings page.
+*   **⚙️ Interactive Learning:**
+    *   Problems are generated dynamically for endless practice.
+    *   Check your answers instantly.
+    *   Use the "Skip" button to move to a new problem or "Show Answer" if you get stuck.
+*   **📱 Responsive Design:** A clean and modern UI that works on both desktop and mobile devices.
 
-**使用者要求：** 製作一個互動式網頁，讓20多歲的成人複習基本算術與代數（約小學3年級到國中3年級程度），涵蓋多個必要單元。預設介面為印尼語，但可以切換成台灣正體中文和英文。
+## 🛠️ Tech Stack
 
-**模型回應：** 提出了網頁的初步概念，包括：
+*   **Frontend:** Vanilla JavaScript (ES6 Modules)
+*   **Styling:** TailwindCSS and custom CSS
+*   **Math Rendering:** KaTeX
 
-- **標題與目標受眾**
-    
-- **頁面結構**：導航列、首頁、學習單元頁面（包含算術和基礎代數的各單元）
-    
-- **單元內容範例**：例如「加法與減法」單元會提供概念解釋、互動練習、文字問題和快速測驗。
-    
-- **建議的額外功能**：進度追蹤、自適應回饋、視覺化、詞彙表、快速學習模式、響應式設計。
-    
-- **語言切換機制**：透過 JSON 檔案和 JavaScript 實現。
-    
+## 🚀 Getting Started
 
-## 第一次修改與功能新增 (2025年7月22日)
+Because this project uses ES Modules, you cannot run it by simply opening the `index.html` file in your browser. It needs to be served by a local web server.
 
-**使用者回饋與問題：**
+**Prerequisites:**
+*   You need to have Git installed.
+*   You need to have Python 3 installed (or any other tool that can run a local server).
 
-1. **分數與小數單元問題**：
-    
-    - `4/9` 這類除不盡的分數難以判斷正確答案。
-        
-    - `5/8 = ? (desimal)` 輸入 `0.625` 被判斷錯誤。
-        
-    - 需要檢查出題和驗證機制。
-        
-2. **新增功能請求**：
-    
-    - 加入「略過」（跳至下一題）功能。
-        
-    - 加入「放棄」（直接看答案）功能。
-        
-3. **基礎不等式單元問題**：
-    
-    - 問題描述不完整（`j5/`）。
-        
+**Instructions:**
 
-**模型回應：**
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/qavit/angka.id.git
+    ```
 
-- **分數與小數單元修正**：
-    
-    - 修改為只生成可精確轉換為有限小數的分數題目。
-        
-    - 改進小數答案的驗證機制，現在能正確判斷精確小數。
-        
-- **新增「略過」與「放棄」功能**：在練習頁面中加入對應按鈕。
-    
-- **基礎不等式單元改進**：生成形如 `$x + A > B$` 或 `$Ax < B$` 的問題，並要求輸入滿足條件的最小或最大整數解。
-    
-- 提供了更新後的 Canvas 程式碼。
-    
+2.  **Navigate to the project directory:**
+    ```sh
+    cd angka.id
+    ```
 
-## 第二次修改與功能新增 (2025年7月22日)
+3.  **Start a local server:**
+    If you have Python 3, you can run this command:
+    ```sh
+    python3 -m http.server
+    ```
+    This will start a server, usually on port 8000.
 
-**使用者回饋與功能請求：**
+4.  **Open the application in your browser:**
+    Open your web browser and go to `http://localhost:8000`.
 
-1. **出題語言切換**：希望題目語言能跟隨介面語言切換，而非固定為印尼語。
-    
-2. **運算順序複雜化**：目前的題目形式單一（`a + b * c`），希望涵蓋四則運算和括號。
-    
-3. **分數與小數單元擴展**：
-    
-    - 目前僅限分數轉小數。
-        
-    - 希望加入小數轉分數。
-        
-    - 建議拆分出獨立的「分數」和「小數」單元，並加入約分、通分、四則運算。
-        
-4. **新增單元**：
-    
-    - 加入「冪次 (Power)」單元（如計算 `$3^4$`)。
-        
-    - 加入「代數運算 (Algebraic Operations)」單元（如乘法公式）。
-        
+## 🔮 Future Development
 
-**模型回應：**
+This project was initially built with Vanilla JS for rapid prototyping. The next major step is to migrate it to a modern front-end framework like **Svelte** or **Vue.js** to improve scalability, state management, and overall maintainability.
 
-- **出題語言切換**：修改了所有問題生成函數，使其根據當前選定的語言生成對應的題目文字（包括純文字和 KaTeX 格式）。
-    
-- **運算順序複雜化**：`generateOrderOfOperationsProblem` 函數已更新，能生成更複雜的包含括號和多種運算符的題目。
-    
-- **分數與小數單元擴展**：
-    
-    - 原有的「分數與小數」單元專注於**轉換**。
-        
-    - 新增了「**分數運算**」和「**小數運算**」兩個獨立單元，涵蓋各自的四則運算。
-        
-    - 引入 `gcd` 函數用於分數約分。
-        
-- **新增單元**：
-    
-    - 新增 `unitPowers` (冪次) 單元。
-        
-    - 新增 `unitAlgebraicOperations` (代數運算) 單元。
-        
-- 提供了更新後的 Canvas 程式碼。
-    
+## 📄 License
 
-## 第三次修改與功能新增 (2025年7月22日)
-
-**使用者回饋與功能請求：**
-
-- 支援 KaTeX 和純文字格式之間的數學顯示切換。
-    
-
-**模型回應：**
-
-- **KaTeX 和純文字切換**：
-    
-    - 在 `<head>` 中引入 KaTeX 函式庫和其樣式。
-        
-    - 每個問題生成函數現在返回 `problemText`（純文字）和 `problemKaTeX`（KaTeX 格式）兩種形式的題目。
-        
-    - 在練習頁面中新增了「數學顯示」切換按鈕，允許用戶在 KaTeX 渲染模式和純文字模式之間切換。
-        
-    - 新增 `useKaTeX` 全局變數和 `renderMath` 輔助函數來管理顯示邏輯。
-        
-- 提供了更新後的 Canvas 程式碼。
+Distributed under the MIT License. See `LICENSE` for more information.
